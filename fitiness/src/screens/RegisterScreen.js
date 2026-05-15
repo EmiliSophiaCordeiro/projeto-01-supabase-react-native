@@ -65,12 +65,13 @@ export default function RegisterScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#F4FFF4',
-  },
+ container: {
+  flex: 1,
+  padding: 20,
+  width: '100%',
+  alignSelf: 'center',
+  backgroundColor: '#F4FFF4',
+},
 
   title: {
     fontSize: 30,

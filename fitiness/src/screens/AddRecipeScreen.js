@@ -38,11 +38,11 @@ export default function AddRecipeScreen() {
       });
 
     if (error) {
-      Alert.alert('Erro', error.message);
+      alert('Erro'+ error.message);
       return;
     }
 
-    Alert.alert('Receita cadastrada');
+    alert('Receita cadastrada');
 
     setNome('');
     setIngredientes('');
@@ -115,11 +115,13 @@ export default function AddRecipeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#F4FFF4',
-  },
+ container: {
+  flex: 1,
+  padding: 20,
+  width: '100%',
+  alignSelf: 'center',
+  backgroundColor: '#F4FFF4',
+},
 
   title: {
     fontSize: 28,

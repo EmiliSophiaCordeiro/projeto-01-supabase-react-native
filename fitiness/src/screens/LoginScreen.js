@@ -16,28 +16,41 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState('');
 
   async function handleLogin() {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    const { data, error } =
+      await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+    console.log(data);
+    console.log(error);
 
     if (error) {
-      Alert.alert('Erro', error.message);
+      Alert.alert(
+        'Erro no login',
+        error.message
+      );
+
       return;
     }
+
+    Alert.alert('Login realizado');
 
     navigation.replace('App');
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>FitChef</Text>
+      <Text style={styles.title}>
+        FitChef
+      </Text>
 
       <TextInput
         placeholder="Email"
         style={styles.input}
         value={email}
         onChangeText={setEmail}
+        autoCapitalize="none"
       />
 
       <TextInput
@@ -58,7 +71,9 @@ export default function LoginScreen({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('Cadastro')}
+        onPress={() =>
+          navigation.navigate('Cadastro')
+        }
       >
         <Text style={styles.link}>
           Criar conta

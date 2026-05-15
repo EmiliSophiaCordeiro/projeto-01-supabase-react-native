@@ -55,13 +55,13 @@ export default function ProfileScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F4FFF4',
-    padding: 20,
-  },
+ container: {
+  flex: 1,
+  padding: 20,
+  width: '100%',
+  alignSelf: 'center',
+  backgroundColor: '#F4FFF4',
+},
 
   title: {
     fontSize: 32,
